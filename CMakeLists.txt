@@ -13,6 +13,8 @@ set(SOURCES
         main.cpp
         Player/Player.cpp
         Player/Token.cpp
+        SpecialSquare/CommunityChestCard.cpp
+        SpecialSquare/ChanceCard.cpp
 
 )
 

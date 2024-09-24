@@ -10,6 +10,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/CLionProjects/Monopoly_CPP/Player/Player.cpp" "CMakeFiles/Monopoly_CPP.dir/Player/Player.cpp.o" "gcc" "CMakeFiles/Monopoly_CPP.dir/Player/Player.cpp.o.d"
   "/home/ubuntu/CLionProjects/Monopoly_CPP/Player/Token.cpp" "CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.o" "gcc" "CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.o.d"
+  "/home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/ChanceCard.cpp" "CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.o" "gcc" "CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.o.d"
+  "/home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/CommunityChestCard.cpp" "CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.o" "gcc" "CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.o.d"
   "/home/ubuntu/CLionProjects/Monopoly_CPP/main.cpp" "CMakeFiles/Monopoly_CPP.dir/main.cpp.o" "gcc" "CMakeFiles/Monopoly_CPP.dir/main.cpp.o.d"
   )
 

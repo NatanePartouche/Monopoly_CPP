@@ -177,6 +177,54 @@ Player/Token.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.s
 .PHONY : Player/Token.cpp.s
 
+SpecialSquare/ChanceCard.o: SpecialSquare/ChanceCard.cpp.o
+.PHONY : SpecialSquare/ChanceCard.o
+
+# target to build an object file
+SpecialSquare/ChanceCard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.o
+.PHONY : SpecialSquare/ChanceCard.cpp.o
+
+SpecialSquare/ChanceCard.i: SpecialSquare/ChanceCard.cpp.i
+.PHONY : SpecialSquare/ChanceCard.i
+
+# target to preprocess a source file
+SpecialSquare/ChanceCard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.i
+.PHONY : SpecialSquare/ChanceCard.cpp.i
+
+SpecialSquare/ChanceCard.s: SpecialSquare/ChanceCard.cpp.s
+.PHONY : SpecialSquare/ChanceCard.s
+
+# target to generate assembly for a file
+SpecialSquare/ChanceCard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.s
+.PHONY : SpecialSquare/ChanceCard.cpp.s
+
+SpecialSquare/CommunityChestCard.o: SpecialSquare/CommunityChestCard.cpp.o
+.PHONY : SpecialSquare/CommunityChestCard.o
+
+# target to build an object file
+SpecialSquare/CommunityChestCard.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.o
+.PHONY : SpecialSquare/CommunityChestCard.cpp.o
+
+SpecialSquare/CommunityChestCard.i: SpecialSquare/CommunityChestCard.cpp.i
+.PHONY : SpecialSquare/CommunityChestCard.i
+
+# target to preprocess a source file
+SpecialSquare/CommunityChestCard.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.i
+.PHONY : SpecialSquare/CommunityChestCard.cpp.i
+
+SpecialSquare/CommunityChestCard.s: SpecialSquare/CommunityChestCard.cpp.s
+.PHONY : SpecialSquare/CommunityChestCard.s
+
+# target to generate assembly for a file
+SpecialSquare/CommunityChestCard.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.s
+.PHONY : SpecialSquare/CommunityChestCard.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -216,6 +264,12 @@ help:
 	@echo "... Player/Token.o"
 	@echo "... Player/Token.i"
 	@echo "... Player/Token.s"
+	@echo "... SpecialSquare/ChanceCard.o"
+	@echo "... SpecialSquare/ChanceCard.i"
+	@echo "... SpecialSquare/ChanceCard.s"
+	@echo "... SpecialSquare/CommunityChestCard.o"
+	@echo "... SpecialSquare/CommunityChestCard.i"
+	@echo "... SpecialSquare/CommunityChestCard.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

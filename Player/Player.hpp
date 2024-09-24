@@ -31,6 +31,7 @@ private:
     std::vector<Utility*> utilityProperties;     // List of owned utilities
 
 public:
+    Player();
     // Constructor: Initialize the player with a name and token
     Player(const std::string& playerName);
 

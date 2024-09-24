@@ -5,6 +5,7 @@
 
 // Constructor: Initialize the player with a name
 Player::Player(const std::string& playerName) : name(playerName) {}
+Player::Player() {}
 
 // Getters
 std::string Player::getName() const { return name; }
@@ -173,6 +174,11 @@ bool Player::checkPlayerBalances(std::vector<Player>& players) {
             std::cout << "You have won the game with a balance of " << player.getBalance() << " $ !" << std::endl;
             return false;  // End game
         }
+    }
+    if(players.size()==1) {
+        std::cout << "Congratulations " << players[0].getName() << "!" << std::endl;
+        std::cout << "You have won the game with a balance of " << players[0].getBalance() << " $ !" << std::endl;
+        return false;
     }
     return true;  // Game continues
 }

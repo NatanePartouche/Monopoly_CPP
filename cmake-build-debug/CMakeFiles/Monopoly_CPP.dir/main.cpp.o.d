@@ -180,19 +180,6 @@ CMakeFiles/Monopoly_CPP.dir/main.cpp.o: \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Board.hpp \
  /usr/include/c++/11/variant /usr/include/c++/11/bits/parse_numbers.h \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/Street.hpp \
- /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/../Player/Player.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/Color.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/RailRoad.hpp \
@@ -200,35 +187,9 @@ CMakeFiles/Monopoly_CPP.dir/main.cpp.o: \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/../Dice.hpp \
  /usr/include/c++/11/ctime \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/CommunityChestCard.hpp \
- /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/ChanceCard.hpp \
- /usr/include/c++/11/random /usr/include/c++/11/cmath /usr/include/math.h \
- /usr/include/aarch64-linux-gnu/bits/math-vector.h \
- /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
- /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
- /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
- /usr/include/aarch64-linux-gnu/bits/fp-fast.h \
- /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h \
- /usr/include/aarch64-linux-gnu/bits/mathcalls.h \
- /usr/include/aarch64-linux-gnu/bits/mathcalls-narrow.h \
- /usr/include/aarch64-linux-gnu/bits/iscanonical.h \
- /usr/include/c++/11/bits/specfun.h /usr/include/c++/11/tr1/gamma.tcc \
- /usr/include/c++/11/tr1/special_function_util.h \
- /usr/include/c++/11/tr1/bessel_function.tcc \
- /usr/include/c++/11/tr1/beta_function.tcc \
- /usr/include/c++/11/tr1/ell_integral.tcc \
- /usr/include/c++/11/tr1/exp_integral.tcc \
- /usr/include/c++/11/tr1/hypergeometric.tcc \
- /usr/include/c++/11/tr1/legendre_function.tcc \
- /usr/include/c++/11/tr1/modified_bessel_func.tcc \
- /usr/include/c++/11/tr1/poly_hermite.tcc \
- /usr/include/c++/11/tr1/poly_laguerre.tcc \
- /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /usr/include/c++/11/bits/random.h \
- /usr/include/aarch64-linux-gnu/c++/11/bits/opt_random.h \
- /usr/include/c++/11/bits/random.tcc /usr/include/c++/11/numeric \
- /usr/include/c++/11/bits/stl_numeric.h \
- /usr/include/c++/11/pstl/glue_numeric_defs.h \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Player/Player.hpp \
+ /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Street.hpp \
+ /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/ChanceCard.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/Go.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/GoToJail.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/LuxuryTax.hpp \

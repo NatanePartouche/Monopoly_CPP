@@ -182,19 +182,6 @@ CMakeFiles/Monopoly_CPP.dir/Player/Player.cpp.o: \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/pstl/execution_defs.h \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/Street.hpp \
- /usr/include/c++/11/memory \
- /usr/include/c++/11/bits/stl_raw_storage_iter.h \
- /usr/include/c++/11/bits/align.h /usr/include/c++/11/bit \
- /usr/include/c++/11/bits/unique_ptr.h \
- /usr/include/c++/11/bits/shared_ptr.h \
- /usr/include/c++/11/bits/shared_ptr_base.h \
- /usr/include/c++/11/bits/allocated_ptr.h \
- /usr/include/c++/11/ext/concurrence.h \
- /usr/include/c++/11/bits/shared_ptr_atomic.h \
- /usr/include/c++/11/bits/atomic_base.h \
- /usr/include/c++/11/bits/atomic_lockfree_defines.h \
- /usr/include/c++/11/backward/auto_ptr.h \
- /usr/include/c++/11/pstl/glue_memory_defs.h \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/../Player/Player.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/Color.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/Properties/RailRoad.hpp \

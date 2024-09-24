@@ -16,7 +16,9 @@
 |
 |-- SpecialSquare/
 |   |-- ChanceCard.hpp
+|   |-- ChanceCard.cpp
 |   |-- CommunityChestCard.hpp
+|   |-- CommunityChestCard.cpp
 |   |-- FreeParking.hpp
 |   |-- Go.hpp
 |   |-- GoToJail.hpp

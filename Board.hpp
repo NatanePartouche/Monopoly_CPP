@@ -3,9 +3,9 @@
 
 #include <variant>
 #include <vector>
-#include "Street.hpp"
-#include "RailRoad.hpp"
-#include "Utility.hpp"
+#include "Properties/Street.hpp"
+#include "Properties/RailRoad.hpp"
+#include "Properties/Utility.hpp"
 #include "SpecialSquare/CommunityChestCard.hpp"
 #include "SpecialSquare/ChanceCard.hpp"
 #include "SpecialSquare/Go.hpp"
@@ -15,9 +15,10 @@
 #include "SpecialSquare/IncomeTax.hpp"
 #include "SpecialSquare/FreeParking.hpp"
 
+// The Board class represents the Monopoly game board.
 class Board {
 public:
-    // Define the variant container to hold different square types
+    // Define a variant type (MapBoard) that can hold any square type
     using MapBoard = std::variant<
         Street,
         Utility,
@@ -32,15 +33,15 @@ public:
         FreeParking
     >;
 
-    // Create a vector to hold the 40 different square objects
+    // A vector to store the 40 squares on the Monopoly board
     std::vector<MapBoard> board;
 
-    // Constructor
+    // Constructor to initialize the board with 40 squares
     Board() {
-        // Resize the vector to hold 40 elements
+        // Resize the vector to 40 squares
         board.resize(40);
 
-        // Initialize the board squares with `emplace`
+        // Initialize each square on the board using `emplace`
         board[0].emplace<Go>();
         board[1].emplace<Street>("Mediterranean Avenue", Color::Brown, 60, 30, 5, 10, 20, 40, 80, 160, 320, 50, 100);
         board[2].emplace<CommunityChestCard>();
@@ -51,7 +52,7 @@ public:
         board[7].emplace<ChanceCard>();
         board[8].emplace<Street>("Vermont Avenue", Color::LightBlue, 100, 50, 6, 12, 30, 90, 270, 400, 550, 50, 50);
         board[9].emplace<Street>("Connecticut Avenue", Color::LightBlue, 120, 60, 8, 16, 40, 100, 300, 450, 600, 50, 50);
-        board[10].emplace<Jail>();  // Jail Case
+        board[10].emplace<Jail>();  // Jail square
         board[11].emplace<Street>("St. Charles Place", Color::Pink, 140, 70, 10, 20, 50, 150, 450, 625, 750, 100, 100);
         board[12].emplace<Utility>("Electric Company");
         board[13].emplace<Street>("States Avenue", Color::Pink, 140, 70, 10, 20, 50, 150, 450, 625, 750, 100, 100);
@@ -61,7 +62,7 @@ public:
         board[17].emplace<CommunityChestCard>();
         board[18].emplace<Street>("Tennessee Avenue", Color::Orange, 180, 90, 14, 28, 70, 200, 550, 750, 950, 100, 100);
         board[19].emplace<Street>("New York Avenue", Color::Orange, 200, 100, 16, 32, 80, 220, 600, 800, 1000, 100, 100);
-        board[20].emplace<FreeParking>();
+        board[20].emplace<FreeParking>();  // Free Parking square
         board[21].emplace<Street>("Kentucky Avenue", Color::Red, 220, 110, 18, 36, 90, 250, 700, 875, 1050, 150, 150);
         board[22].emplace<ChanceCard>();
         board[23].emplace<Street>("Indiana Avenue", Color::Red, 220, 110, 18, 36, 90, 250, 700, 875, 1050, 150, 150);
@@ -71,7 +72,7 @@ public:
         board[27].emplace<Street>("Ventnor Avenue", Color::Yellow, 260, 130, 22, 44, 110, 330, 800, 975, 1150, 150, 150);
         board[28].emplace<Utility>("Water Works");
         board[29].emplace<Street>("Marvin Gardens", Color::Yellow, 280, 140, 24, 48, 120, 360, 850, 1025, 1200, 150, 150);
-        board[30].emplace<GoToJail>(); // Go to jail
+        board[30].emplace<GoToJail>();  // Go to Jail square
         board[31].emplace<Street>("Pacific Avenue", Color::Green, 300, 150, 26, 52, 130, 390, 900, 1100, 1275, 200, 200);
         board[32].emplace<Street>("North Carolina Avenue", Color::Green, 300, 150, 26, 52, 130, 390, 900, 1100, 1275, 200, 200);
         board[33].emplace<CommunityChestCard>();
@@ -83,20 +84,23 @@ public:
         board[39].emplace<Street>("Boardwalk", Color::DarkBlue, 400, 200, 50, 100, 200, 600, 1400, 1700, 2000, 200, 200);
     }
 
+    // Handle the logic of a player's turn when they land on a square
     static void handlePlayerTurn(Board& board, Player& player) {
-        // Get the player's current position
+        // Get the player's current position on the board
         int playerPosition = player.getPosition();
 
-        // Get the square the player is on
+        // Get the square the player landed on
         auto& square = board.board[playerPosition];
 
-        // Use std::visit to handle the logic based on the type of square
+        // Use std::visit to handle the specific square type
         std::visit([&board, &player](auto&& obj) {
             using T = std::decay_t<decltype(obj)>;
 
+            // Handle Street squares
             if constexpr (std::is_same_v<T, Street>) {
                 auto& street = std::get<Street>(board.board[player.getPosition()]);
                 if (street.getOwner() == nullptr) {
+                    // If the street has no owner, offer the player the option to buy it
                     char choice;
                     bool validChoice = false;
                     while (!validChoice) {
@@ -117,12 +121,15 @@ public:
                         }
                     }
                 } else {
+                    // If the street is owned, the player must pay rent
                     std::cout << "This street already has an owner: " << street.getOwner()->getName() << std::endl;
                     std::cout << "\nThe rent is: " << street.getRent() << "M$" << std::endl;
                     player.removeMoney(street.getRent());
                     street.getOwner()->addMoney(street.getRent());
                 }
-            } else if constexpr (std::is_same_v<T, RailRoad>) {
+            }
+            // Handle RailRoad squares
+            else if constexpr (std::is_same_v<T, RailRoad>) {
                 auto& railroad = std::get<RailRoad>(board.board[player.getPosition()]);
                 if (railroad.getOwner() == nullptr) {
                     char choice;
@@ -150,7 +157,9 @@ public:
                     player.removeMoney(railroad.getRent());
                     railroad.getOwner()->addMoney(railroad.getRent());
                 }
-            } else if constexpr (std::is_same_v<T, Utility>) {
+            }
+            // Handle Utility squares
+            else if constexpr (std::is_same_v<T, Utility>) {
                 auto& utility = std::get<Utility>(board.board[player.getPosition()]);
                 if (utility.getOwner() == nullptr) {
                     char choice;
@@ -180,24 +189,48 @@ public:
                     player.removeMoney(rent);
                     utility.getOwner()->addMoney(rent);
                 }
-            } else if constexpr (std::is_same_v<T, ChanceCard>) {
-                // Handle ChanceCard logic
-            } else if constexpr (std::is_same_v<T, CommunityChestCard>) {
-                // Handle CommunityChestCard logic
-            } else if constexpr (std::is_same_v<T, Go>) {
+            }
+            // Handle ChanceCard squares
+            else if constexpr (std::is_same_v<T, ChanceCard>) {
+                // Assuming the player lands on a Chance square
+                std::cout << "You are on a Chance square. Drawing a card..." << std::endl;
+                // Simulate drawing a Chance card and executing its action
+                ChanceCard chanceCard(player, board);  // `owner` is the player, and `board` is the game board
+                chanceCard.drawCard();  // This will randomly pick and execute a Chance card action
+            }
+            // Handle CommunityChestCard squares
+            else if constexpr (std::is_same_v<T, CommunityChestCard>) {
+                // Assuming the player lands on a Community Chest square
+                std::cout << "You are on a Community Chest square. Drawing a card..." << std::endl;
+                // Simulate drawing a Community Chest card and executing its action
+                CommunityChestCard communityChestCard(player, board);  // `owner` is the player, and `board` is the game board
+                communityChestCard.drawCard();  // This will randomly pick and execute a Community Chest card action
+            }
+            // Handle Go square (no action needed)
+            else if constexpr (std::is_same_v<T, Go>) {
                 // Nothing to do here
-            } else if constexpr (std::is_same_v<T, GoToJail>) {
-                player.setPosition(10); // Jail position
-                player.setInJail(true);
-            } else if constexpr (std::is_same_v<T, LuxuryTax>) {
-                std::cout << player.getName() << " has landed on the Luxury Tax square. You must pay 100M$.!" << std::endl;
-                player.removeMoney(100); // Amount of the luxury tax
-            } else if constexpr (std::is_same_v<T, Jail>) {
+            }
+            // Handle GoToJail square
+            else if constexpr (std::is_same_v<T, GoToJail>) {
+                player.setPosition(10);  // Move player to Jail
+                player.setInJail(true);  // Set player to "in jail" status
+            }
+            // Handle LuxuryTax square
+            else if constexpr (std::is_same_v<T, LuxuryTax>) {
+                std::cout << player.getName() << " has landed on the Luxury Tax square. You must pay 100M$!" << std::endl;
+                player.removeMoney(100);  // Pay the luxury tax
+            }
+            // Handle Jail square (no action needed)
+            else if constexpr (std::is_same_v<T, Jail>) {
                 // Nothing to do here
-            } else if constexpr (std::is_same_v<T, IncomeTax>) {
-                std::cout << player.getName() << " has landed on the Income Tax square. You must pay 200M$.!" << std::endl;
-                player.removeMoney(200); // Amount of the income tax
-            } else if constexpr (std::is_same_v<T, FreeParking>) {
+            }
+            // Handle IncomeTax square
+            else if constexpr (std::is_same_v<T, IncomeTax>) {
+                std::cout << player.getName() << " has landed on the Income Tax square. You must pay 200M$!" << std::endl;
+                player.removeMoney(200);  // Pay the income tax
+            }
+            // Handle FreeParking square (no action needed)
+            else if constexpr (std::is_same_v<T, FreeParking>) {
                 // Nothing to do here
             }
         }, square);
