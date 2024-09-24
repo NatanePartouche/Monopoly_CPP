@@ -208,7 +208,7 @@ public:
             }
             // Handle Go square (no action needed)
             else if constexpr (std::is_same_v<T, Go>) {
-                // Nothing to do here
+                std::cout << "You have landed on Go! Collect 200M$ as you pass." << std::endl;
             }
             // Handle GoToJail square
             else if constexpr (std::is_same_v<T, GoToJail>) {
@@ -222,7 +222,11 @@ public:
             }
             // Handle Jail square (no action needed)
             else if constexpr (std::is_same_v<T, Jail>) {
-                // Nothing to do here
+                if (!player.isInJail()) {
+                    std::cout << "You are on the 'Just Visiting' space of the jail." << std::endl;
+                } else {
+                    std::cout << "You are currently in jail." << std::endl;
+                }
             }
             // Handle IncomeTax square
             else if constexpr (std::is_same_v<T, IncomeTax>) {
@@ -231,7 +235,7 @@ public:
             }
             // Handle FreeParking square (no action needed)
             else if constexpr (std::is_same_v<T, FreeParking>) {
-                // Nothing to do here
+                std::cout << "You are on the Free Parking space. Enjoy a break!" << std::endl;
             }
         }, square);
     }

@@ -1,6 +1,6 @@
 ## Project Structure
 
-|-- Monopoly_C++/
+Monopoly_C++/
 |
 |-- Player/
 |   |-- Player.hpp

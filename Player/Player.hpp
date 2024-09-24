@@ -71,6 +71,9 @@ public:
     // Check if the player owns all properties of a specific color group
     bool ownsFullColorGroup(Color color); // Check if the player owns an entire color group
 
+    // Récupère toutes les propriétés du joueur appartenant à un groupe de couleurs spécifique
+    std::vector<Street*> getPropertiesOfColorGroup(Color color) const;
+
     // Display the player's current status (name, balance, properties, etc.)
     void display() const;
 

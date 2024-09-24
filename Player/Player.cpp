@@ -3,7 +3,7 @@
 #include "RailRoad.hpp"
 #include "Utility.hpp"
 
-// Constructor: Initialize the player with a name
+// Constructors
 Player::Player(const std::string& playerName) : name(playerName) {}
 Player::Player() {}
 
@@ -33,40 +33,45 @@ void Player::setRailroadProperties(const std::vector<RailRoad*>& railroads) { ra
 void Player::setUtilityProperties(const std::vector<Utility*>& utilities) { utilityProperties = utilities; }
 void Player::setJailTurns(int turns) { JailTurns = turns; }
 
-// Check if the player owns all properties in a color group
+// Property Management
 bool Player::ownsFullColorGroup(Color color) {
-    int requiredProperties = 0;
+    int requiredProperties = (color == Color::Brown || color == Color::DarkBlue) ? 2 : 3;
 
-    // Determine how many properties are needed for each color group
-    switch (color) {
-        case Color::Brown:
-            requiredProperties = 2;
-            break;
-        case Color::LightBlue:
-        case Color::Pink:
-        case Color::Orange:
-        case Color::Red:
-        case Color::Yellow:
-        case Color::Green:
-            requiredProperties = 3;
-            break;
-        case Color::DarkBlue:
-            requiredProperties = 2;
-            break;
-    }
-
-    // Count how many properties of the specified color the player owns
     int ownedProperties = 0;
     for (const Street* street : streetProperties) {
         if (street->getColor() == color) {
             ownedProperties++;
         }
     }
-
     return ownedProperties == requiredProperties;
 }
 
-// Display the player's current status
+std::vector<Street*> Player::getPropertiesOfColorGroup(Color color) const {
+    std::vector<Street*> colorGroupProperties;
+    for (Street* street : streetProperties) {
+        if (street->getColor() == color) {
+            colorGroupProperties.push_back(street);
+        }
+    }
+    return colorGroupProperties;
+}
+
+void Player::addStreetProperty(Street* street) {
+    streetProperties.push_back(street);
+    std::cout << name << " has acquired the property: " << street->getName() << std::endl;
+}
+
+void Player::addRailroadProperty(RailRoad* railroad) {
+    railroadProperties.push_back(railroad);
+    std::cout << name << " has acquired the railroad: " << railroad->getName() << std::endl;
+}
+
+void Player::addUtilityProperty(Utility* utility) {
+    utilityProperties.push_back(utility);
+    std::cout << name << " has acquired the utility: " << utility->getName() << std::endl;
+}
+
+// Display Information
 void Player::display() const {
     std::cout << "Player: " << name << "\n"
               << "Token: " << token.getTokenName() << "\n"
@@ -78,18 +83,15 @@ void Player::display() const {
               << "Turns Played: " << boardTurns << std::endl;
 }
 
-// Get a list of available tokens for selection by filtering out those already taken by other players
+// Token Management
 std::string Player::getAvailableTokensAsString(const std::vector<Player>& players) {
-    Token token;  // Temporary token object to access valid tokens
-    std::set<std::string> availableTokens = token.getValidTokens();  // Get the set of valid tokens
+    Token token;
+    std::set<std::string> availableTokens = token.getValidTokens();
 
-    // Remove tokens that are already taken by other players
     for (const Player& player : players) {
-        std::string playerToken = player.getToken();  // Get the player's token
-        availableTokens.erase(playerToken);  // Remove it from available tokens
+        availableTokens.erase(player.getToken());
     }
 
-    // Convert the remaining available tokens into a string
     std::string tokensList;
     for (const auto& tokenName : availableTokens) {
         tokensList += "\n" + tokenName;
@@ -98,12 +100,10 @@ std::string Player::getAvailableTokensAsString(const std::vector<Player>& player
     return tokensList;
 }
 
-// Player token selection: prompts player to select a token from available options
 void Player::choosePlayerToken(Player& currentPlayer, const std::vector<Player>& players_vector) {
     std::string tmp_token_name;
     bool validTokenSelected = false;
 
-    // Loop until a valid token is selected
     while (!validTokenSelected) {
         std::cout << "\nPlayer " << currentPlayer.getName() << ", choose an available token:\n";
         std::string availableTokensList = Player::getAvailableTokensAsString(players_vector);
@@ -111,9 +111,8 @@ void Player::choosePlayerToken(Player& currentPlayer, const std::vector<Player>&
         std::cout << "\nEnter the name of the chosen token for " << currentPlayer.getName() << ": ";
         std::getline(std::cin, tmp_token_name);
 
-        // Check if the selected token is valid
         if (Token::isValidToken(tmp_token_name)) {
-            currentPlayer.setToken(tmp_token_name);  // Set the token for the player
+            currentPlayer.setToken(tmp_token_name);
             validTokenSelected = true;
         } else {
             std::cout << "The token name is invalid or already taken. Please try again." << std::endl;
@@ -121,7 +120,7 @@ void Player::choosePlayerToken(Player& currentPlayer, const std::vector<Player>&
     }
 }
 
-// Add money to the player's balance
+// Money Management
 void Player::addMoney(int amount) {
     if (amount > 0) {
         moneyWallet += amount;
@@ -129,34 +128,13 @@ void Player::addMoney(int amount) {
     }
 }
 
-// Remove money from the player's balance
 bool Player::removeMoney(int amount) {
     moneyWallet -= amount;
     std::cout << name << " paid " << amount << "M$. New balance: " << moneyWallet << "M$." << std::endl;
     return true;
 }
 
-// Add a Street property to the player's portfolio
-void Player::addStreetProperty(Street* street) {
-    streetProperties.push_back(street);
-    std::cout << name << " has acquired the property: " << street->getName() << std::endl;
-}
-
-// Add a RailRoad property to the player's portfolio
-void Player::addRailroadProperty(RailRoad* railroad) {
-    railroadProperties.push_back(railroad);
-    std::cout << name << " has acquired the railroad: " << railroad->getName() << std::endl;
-}
-
-// Add a Utility property to the player's portfolio
-void Player::addUtilityProperty(Utility* utility) {
-    utilityProperties.push_back(utility);
-    std::cout << name << " has acquired the utility: " << utility->getName() << std::endl;
-}
-
-// Check balances of all players and remove those with a negative balance
 bool Player::checkPlayerBalances(std::vector<Player>& players) {
-    // Remove players with negative balances and notify
     players.erase(std::remove_if(players.begin(), players.end(),
         [](const Player& player) {
             if (player.getBalance() <= 0) {
@@ -164,63 +142,26 @@ bool Player::checkPlayerBalances(std::vector<Player>& players) {
                 return true;
             }
             return false;
-        }),
-        players.end());
+        }), players.end());
 
-    // Check if any player has won by reaching 4000 balance
     for (const auto& player : players) {
         if (player.getBalance() >= 4000) {
-            std::cout << "Congratulations " << player.getName() << "!" << std::endl;
-            std::cout << "You have won the game with a balance of " << player.getBalance() << " $ !" << std::endl;
-            return false;  // End game
+            std::cout << "Congratulations " << player.getName() << "! You have won the game with a balance of " << player.getBalance() << " $ !" << std::endl;
+            return false;
         }
     }
-    if(players.size()==1) {
-        std::cout << "Congratulations " << players[0].getName() << "!" << std::endl;
-        std::cout << "You have won the game with a balance of " << players[0].getBalance() << " $ !" << std::endl;
+
+    if (players.size() == 1) {
+        std::cout << "Congratulations " << players[0].getName() << "! You have won the game with a balance of " << players[0].getBalance() << " $ !" << std::endl;
         return false;
     }
-    return true;  // Game continues
+    return true;
 }
 
-// Manage player's properties (add houses or hotels)
-void Player::manageProperties() {
-    if (streetProperties.empty()) {
-        std::cout << "You don't own any properties." << std::endl;
-        return;
-    }
-
-    char choice;
-    std::cout << "Do you want to add a house or hotel? (y/n): ";
-    std::cin >> choice;
-
-    if (choice != 'y' && choice != 'Y') {
-        std::cout << "No changes made to your properties." << std::endl;
-        return;
-    }
-
-    // Iterate through owned street properties and allow the player to upgrade them
-    for (Street* street : streetProperties) {
-        if (ownsFullColorGroup(street->getColor())) {
-            int houseCount = street->getNumberOfHouses();
-            if (houseCount < 4) {
-                std::cout << "You can add a house to the property: " << street->getName() << std::endl;
-                street->buildHouse();
-            } else if (houseCount == 4) {
-                std::cout << "You can add a hotel to " << street->getName() << "." << std::endl;
-                street->buildHotel();
-            }
-        } else {
-            std::cout << "You don't own all properties of the color group." << std::endl;
-        }
-    }
-}
-
-// Handle player attempting to release from jail
+// Jail Management
 void Player::attemptToReleaseFromJail() {
     if (!this->isInJail()) { return; }
 
-    // Option 1: Use "Get Out of Jail Free" card
     if (this->getCard_out_of_jail()) {
         std::cout << this->getName() << " used a 'Get Out of Jail Free' card!" << std::endl;
         this->setInJail(false);
@@ -228,45 +169,99 @@ void Player::attemptToReleaseFromJail() {
         return;
     }
 
-    // Option 2: Pay 50 NIS fine
     char choice;
     std::cout << this->getName() << ", do you want to pay a fine of 50 NIS to get out of jail? (y/n): ";
     std::cin >> choice;
 
     if ((choice == 'y' || choice == 'Y') && this->getBalance() >= 50) {
         this->removeMoney(50);
-        std::cout << this->getName() << " paid 50 NIS and is out of jail!" << std::endl;
         this->setInJail(false);
-        return;
+        std::cout << this->getName() << " paid 50 NIS and is out of jail!" << std::endl;
     } else if (choice == 'y' && this->getBalance() < 50) {
         std::cout << "Insufficient funds to pay the fine!" << std::endl;
     }
 
-    // Option 3: Roll for a double to get out
     Dice dice;
     dice.roll();
     std::cout << this->getName() << " rolled a " << dice.get_die_1() << " and " << dice.get_die_2() << "." << std::endl;
 
     if (dice.isDouble()) {
-        std::cout << this->getName() << " rolled a double and is out of jail!" << std::endl;
         this->setInJail(false);
+        std::cout << this->getName() << " rolled a double and is out of jail!" << std::endl;
     } else {
         std::cout << this->getName() << " did not roll a double." << std::endl;
     }
 
-    // If player spends 3 turns in jail, they must pay the fine
     if (this->getJailTurns() >= 3) {
         std::cout << this->getName() << " has spent 3 turns in jail. Must pay 50 NIS to get out." << std::endl;
         if (this->getBalance() >= 50) {
             this->removeMoney(50);
-            std::cout << this->getName() << " paid 50 NIS and is out of jail after 3 turns." << std::endl;
             this->setInJail(false);
         } else {
-            std::cout << this->getName() << " does not have enough money to pay the fine, but must still leave jail." << std::endl;
-            this->setInJail(false);  // Player is released after 3 turns, even without money
+            this->setInJail(false);
+            std::cout << this->getName() << " has been released from jail after 3 turns." << std::endl;
         }
     } else {
         this->setJailTurns(this->getJailTurns() + 1);
-        std::cout << this->getName() << " has been in jail for " << this->getJailTurns() << " turns." << std::endl;
+    }
+}
+
+// Property Building (Houses & Hotels)
+void Player::manageProperties() {
+    if (streetProperties.empty()) {
+        std::cout << "You don't own any properties." << std::endl;
+        return;
+    }
+
+    for (Street* street : streetProperties) {
+        if (ownsFullColorGroup(street->getColor())) {
+            std::vector<Street*> colorGroupProperties = getPropertiesOfColorGroup(street->getColor());
+
+            bool canBuild = true;
+            int minHouses = colorGroupProperties[0]->getNumberOfHouses();
+            for (Street* prop : colorGroupProperties) {
+                minHouses = std::min(minHouses, prop->getNumberOfHouses());
+            }
+
+            if (street->getNumberOfHouses() > minHouses) {
+                std::cout << "You must build on the other properties of the same color group first." << std::endl;
+                canBuild = false;
+            }
+
+            while (canBuild) {
+                int houseCount = street->getNumberOfHouses();
+
+                if (houseCount < 4) {
+                    char choice;
+                    std::cout << "Do you want to add a house to this property? (y/n): ";
+                    std::cin >> choice;
+
+                    if (choice == 'y' || choice == 'Y') {
+                        if (street->buildHouse()) {
+                            std::cout << "House added to " << street->getName() << std::endl;
+                        } else {
+                            std::cout << "Unable to build a house." << std::endl;
+                        }
+                    }
+                } else if (houseCount == 4 && !street->getHasHotel()) {
+                    char choice;
+                    std::cout << "Do you want to add a hotel to this property? (y/n): ";
+                    std::cin >> choice;
+
+                    if (choice == 'y' || choice == 'Y') {
+                        if (street->buildHotel()) {
+                            std::cout << "Hotel added to " << street->getName() << std::endl;
+                        } else {
+                            std::cout << "Unable to build a hotel." << std::endl;
+                        }
+                    }
+                } else {
+                    std::cout << "No further construction possible on " << street->getName() << std::endl;
+                    break;
+                }
+            }
+        } else {
+            std::cout << "You don't own all properties of the color group for " << street->getName() << "." << std::endl;
+        }
     }
 }
