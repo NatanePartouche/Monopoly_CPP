@@ -2,9 +2,7 @@
 #define INCOMETAX_HPP
 
 class IncomeTax{
-private:
-    int taxAmount=200;
 public:
-    IncomeTax(){int a=8;}
+    IncomeTax(){}
 };
 #endif // INCOMETAX_HPP

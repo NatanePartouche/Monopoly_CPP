@@ -2,20 +2,21 @@
 
 |-- Monopoly_C++/
 |
-|-- Card/
-|   |-- ChanceCard.hpp
-|   |-- CommunityChestCard.hpp
-|
 |-- Player/
 |   |-- Player.hpp
+|   |-- Player.cpp
 |   |-- Token.hpp
+|   |-- Token.cpp
 |
 |-- Properties/
 |   |-- RailRoad.hpp
 |   |-- Street.hpp
+|   |-- Color.hpp
 |   |-- Utility.hpp
 |
 |-- SpecialSquare/
+|   |-- ChanceCard.hpp
+|   |-- CommunityChestCard.hpp
 |   |-- FreeParking.hpp
 |   |-- Go.hpp
 |   |-- GoToJail.hpp
@@ -29,8 +30,5 @@
 |-- Dice.hpp
 |-- main.cpp
 |-- README.md
-|-- cmake-build-debug/
+|-- cmake-build-debug/...
 |-- CMakeLists.txt
-
-
-

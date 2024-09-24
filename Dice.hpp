@@ -8,7 +8,6 @@ class Dice {
 public:
     int die_1;
     int die_2;
-    int dice_roll;
 
     // Constructor: Initializes random seed and rolls the dice
     Dice() {
@@ -19,18 +18,22 @@ public:
     }
 
     // Roll the dice (generate new random values for both dice)
-    void roll() {
+    int roll() {
         die_1 = rand() % 6 + 1;
         die_2 = rand() % 6 + 1;
-        dice_roll = die_1 + die_2;
+        return die_1 + die_2;
     }
 
-    // Get the total dice roll
-    int get_dice_roll() const { return dice_roll; }
     // Get the value of die 1
     int get_die_1() const { return die_1; }
+
     // Get the value of die 2
     int get_die_2() const { return die_2; }
+
+    // Check if both dice have the same value (i.e., a double)
+    bool isDouble() const {
+        return die_1 == die_2;
+    }
 };
 
 #endif // DICE_HPP

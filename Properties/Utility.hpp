@@ -14,7 +14,7 @@ private:
 
 public:
     // Constructor
-    Utility(std::string name) : name(name), purchasePrice(purchasePrice), owner(nullptr) {}
+    Utility(std::string name) : name(name){}
 
     // Getters
     std::string getName() const { return name; }
@@ -27,19 +27,15 @@ public:
     // Calculate the rent based on the number of utilities owned
     int getRent() const {
         if (this->owner == nullptr) return 0;
-
         Dice dice;  // Create a local instance of Dice
-        int rollResult = dice.get_dice_roll();  // Get the result of the dice roll
-
+        int rollResult = dice.roll();  // Get the result of the dice roll
         if (owner->getUtilityProperties().size() == 1) {
             return rollResult * 4;  // Rent if the owner owns 1 utility
         }
         else if (owner->getUtilityProperties().size() == 2) {
             return rollResult * 10;  // Rent if the owner owns 2 utilities
         }
-        else {
             return 0;
-        }
     }
 };
 

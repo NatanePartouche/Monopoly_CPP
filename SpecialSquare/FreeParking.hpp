@@ -3,6 +3,6 @@
 
 class FreeParking {
 public:
-    FreeParking(){int a=8;}
+    FreeParking(){}
 };
 #endif // FREEPARKING_HPP
