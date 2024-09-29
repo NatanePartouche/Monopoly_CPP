@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "Monopoly_CPP",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Monopoly_CPP::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Monopoly_CPP-Debug-f0e1b28aa4203301e0ff.json",
+					"jsonFile" : "target-Monopoly_CPP-Debug-9e07991b9e2ee6dc952a.json",
 					"name" : "Monopoly_CPP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Monopoly_Tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Monopoly_Tests-Debug-0db22ee04f6ea8b2d074.json",
+					"name" : "Monopoly_Tests",
 					"projectIndex" : 0
 				}
 			]

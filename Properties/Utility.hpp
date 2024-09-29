@@ -13,8 +13,10 @@ private:
     Player* owner;                // Current owner of the utility
 
 public:
-    // Constructor
-    Utility(std::string name) : name(name){}
+    // Constructor with all the necessary parameters
+    Utility(const std::string& name, int purchasePrice = 150, int mortgageValue = 75)
+        : name(name), purchasePrice(purchasePrice), mortgageValue(mortgageValue), owner(nullptr) {}
+
 
     // Getters
     std::string getName() const { return name; }

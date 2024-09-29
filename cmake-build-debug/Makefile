@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -129,12 +139,26 @@ Monopoly_CPP/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/build
 .PHONY : Monopoly_CPP/fast
 
+#=============================================================================
+# Target rules for targets named Monopoly_Tests
+
+# Build rule for target.
+Monopoly_Tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Monopoly_Tests
+.PHONY : Monopoly_Tests
+
+# fast build rule for target.
+Monopoly_Tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/build
+.PHONY : Monopoly_Tests/fast
+
 Player/Player.o: Player/Player.cpp.o
 .PHONY : Player/Player.o
 
 # target to build an object file
 Player/Player.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Player.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Player/Player.cpp.o
 .PHONY : Player/Player.cpp.o
 
 Player/Player.i: Player/Player.cpp.i
@@ -143,6 +167,7 @@ Player/Player.i: Player/Player.cpp.i
 # target to preprocess a source file
 Player/Player.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Player.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Player/Player.cpp.i
 .PHONY : Player/Player.cpp.i
 
 Player/Player.s: Player/Player.cpp.s
@@ -151,6 +176,7 @@ Player/Player.s: Player/Player.cpp.s
 # target to generate assembly for a file
 Player/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Player.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Player/Player.cpp.s
 .PHONY : Player/Player.cpp.s
 
 Player/Token.o: Player/Token.cpp.o
@@ -159,6 +185,7 @@ Player/Token.o: Player/Token.cpp.o
 # target to build an object file
 Player/Token.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Player/Token.cpp.o
 .PHONY : Player/Token.cpp.o
 
 Player/Token.i: Player/Token.cpp.i
@@ -167,6 +194,7 @@ Player/Token.i: Player/Token.cpp.i
 # target to preprocess a source file
 Player/Token.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Player/Token.cpp.i
 .PHONY : Player/Token.cpp.i
 
 Player/Token.s: Player/Token.cpp.s
@@ -175,6 +203,7 @@ Player/Token.s: Player/Token.cpp.s
 # target to generate assembly for a file
 Player/Token.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Player/Token.cpp.s
 .PHONY : Player/Token.cpp.s
 
 SpecialSquare/ChanceCard.o: SpecialSquare/ChanceCard.cpp.o
@@ -183,6 +212,7 @@ SpecialSquare/ChanceCard.o: SpecialSquare/ChanceCard.cpp.o
 # target to build an object file
 SpecialSquare/ChanceCard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/SpecialSquare/ChanceCard.cpp.o
 .PHONY : SpecialSquare/ChanceCard.cpp.o
 
 SpecialSquare/ChanceCard.i: SpecialSquare/ChanceCard.cpp.i
@@ -191,6 +221,7 @@ SpecialSquare/ChanceCard.i: SpecialSquare/ChanceCard.cpp.i
 # target to preprocess a source file
 SpecialSquare/ChanceCard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/SpecialSquare/ChanceCard.cpp.i
 .PHONY : SpecialSquare/ChanceCard.cpp.i
 
 SpecialSquare/ChanceCard.s: SpecialSquare/ChanceCard.cpp.s
@@ -199,6 +230,7 @@ SpecialSquare/ChanceCard.s: SpecialSquare/ChanceCard.cpp.s
 # target to generate assembly for a file
 SpecialSquare/ChanceCard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/SpecialSquare/ChanceCard.cpp.s
 .PHONY : SpecialSquare/ChanceCard.cpp.s
 
 SpecialSquare/CommunityChestCard.o: SpecialSquare/CommunityChestCard.cpp.o
@@ -207,6 +239,7 @@ SpecialSquare/CommunityChestCard.o: SpecialSquare/CommunityChestCard.cpp.o
 # target to build an object file
 SpecialSquare/CommunityChestCard.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/SpecialSquare/CommunityChestCard.cpp.o
 .PHONY : SpecialSquare/CommunityChestCard.cpp.o
 
 SpecialSquare/CommunityChestCard.i: SpecialSquare/CommunityChestCard.cpp.i
@@ -215,6 +248,7 @@ SpecialSquare/CommunityChestCard.i: SpecialSquare/CommunityChestCard.cpp.i
 # target to preprocess a source file
 SpecialSquare/CommunityChestCard.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/SpecialSquare/CommunityChestCard.cpp.i
 .PHONY : SpecialSquare/CommunityChestCard.cpp.i
 
 SpecialSquare/CommunityChestCard.s: SpecialSquare/CommunityChestCard.cpp.s
@@ -223,7 +257,176 @@ SpecialSquare/CommunityChestCard.s: SpecialSquare/CommunityChestCard.cpp.s
 # target to generate assembly for a file
 SpecialSquare/CommunityChestCard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/SpecialSquare/CommunityChestCard.cpp.s
 .PHONY : SpecialSquare/CommunityChestCard.cpp.s
+
+Tests/Board_Tests.o: Tests/Board_Tests.cpp.o
+.PHONY : Tests/Board_Tests.o
+
+# target to build an object file
+Tests/Board_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Board_Tests.cpp.o
+.PHONY : Tests/Board_Tests.cpp.o
+
+Tests/Board_Tests.i: Tests/Board_Tests.cpp.i
+.PHONY : Tests/Board_Tests.i
+
+# target to preprocess a source file
+Tests/Board_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Board_Tests.cpp.i
+.PHONY : Tests/Board_Tests.cpp.i
+
+Tests/Board_Tests.s: Tests/Board_Tests.cpp.s
+.PHONY : Tests/Board_Tests.s
+
+# target to generate assembly for a file
+Tests/Board_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Board_Tests.cpp.s
+.PHONY : Tests/Board_Tests.cpp.s
+
+Tests/Dice_Tests.o: Tests/Dice_Tests.cpp.o
+.PHONY : Tests/Dice_Tests.o
+
+# target to build an object file
+Tests/Dice_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Dice_Tests.cpp.o
+.PHONY : Tests/Dice_Tests.cpp.o
+
+Tests/Dice_Tests.i: Tests/Dice_Tests.cpp.i
+.PHONY : Tests/Dice_Tests.i
+
+# target to preprocess a source file
+Tests/Dice_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Dice_Tests.cpp.i
+.PHONY : Tests/Dice_Tests.cpp.i
+
+Tests/Dice_Tests.s: Tests/Dice_Tests.cpp.s
+.PHONY : Tests/Dice_Tests.s
+
+# target to generate assembly for a file
+Tests/Dice_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Dice_Tests.cpp.s
+.PHONY : Tests/Dice_Tests.cpp.s
+
+Tests/Player_Tests.o: Tests/Player_Tests.cpp.o
+.PHONY : Tests/Player_Tests.o
+
+# target to build an object file
+Tests/Player_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Player_Tests.cpp.o
+.PHONY : Tests/Player_Tests.cpp.o
+
+Tests/Player_Tests.i: Tests/Player_Tests.cpp.i
+.PHONY : Tests/Player_Tests.i
+
+# target to preprocess a source file
+Tests/Player_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Player_Tests.cpp.i
+.PHONY : Tests/Player_Tests.cpp.i
+
+Tests/Player_Tests.s: Tests/Player_Tests.cpp.s
+.PHONY : Tests/Player_Tests.s
+
+# target to generate assembly for a file
+Tests/Player_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Player_Tests.cpp.s
+.PHONY : Tests/Player_Tests.cpp.s
+
+Tests/RailRoad_Tests.o: Tests/RailRoad_Tests.cpp.o
+.PHONY : Tests/RailRoad_Tests.o
+
+# target to build an object file
+Tests/RailRoad_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/RailRoad_Tests.cpp.o
+.PHONY : Tests/RailRoad_Tests.cpp.o
+
+Tests/RailRoad_Tests.i: Tests/RailRoad_Tests.cpp.i
+.PHONY : Tests/RailRoad_Tests.i
+
+# target to preprocess a source file
+Tests/RailRoad_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/RailRoad_Tests.cpp.i
+.PHONY : Tests/RailRoad_Tests.cpp.i
+
+Tests/RailRoad_Tests.s: Tests/RailRoad_Tests.cpp.s
+.PHONY : Tests/RailRoad_Tests.s
+
+# target to generate assembly for a file
+Tests/RailRoad_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/RailRoad_Tests.cpp.s
+.PHONY : Tests/RailRoad_Tests.cpp.s
+
+Tests/Street_Tests.o: Tests/Street_Tests.cpp.o
+.PHONY : Tests/Street_Tests.o
+
+# target to build an object file
+Tests/Street_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Street_Tests.cpp.o
+.PHONY : Tests/Street_Tests.cpp.o
+
+Tests/Street_Tests.i: Tests/Street_Tests.cpp.i
+.PHONY : Tests/Street_Tests.i
+
+# target to preprocess a source file
+Tests/Street_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Street_Tests.cpp.i
+.PHONY : Tests/Street_Tests.cpp.i
+
+Tests/Street_Tests.s: Tests/Street_Tests.cpp.s
+.PHONY : Tests/Street_Tests.s
+
+# target to generate assembly for a file
+Tests/Street_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Street_Tests.cpp.s
+.PHONY : Tests/Street_Tests.cpp.s
+
+Tests/Token_Tests.o: Tests/Token_Tests.cpp.o
+.PHONY : Tests/Token_Tests.o
+
+# target to build an object file
+Tests/Token_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Token_Tests.cpp.o
+.PHONY : Tests/Token_Tests.cpp.o
+
+Tests/Token_Tests.i: Tests/Token_Tests.cpp.i
+.PHONY : Tests/Token_Tests.i
+
+# target to preprocess a source file
+Tests/Token_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Token_Tests.cpp.i
+.PHONY : Tests/Token_Tests.cpp.i
+
+Tests/Token_Tests.s: Tests/Token_Tests.cpp.s
+.PHONY : Tests/Token_Tests.s
+
+# target to generate assembly for a file
+Tests/Token_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Token_Tests.cpp.s
+.PHONY : Tests/Token_Tests.cpp.s
+
+Tests/Utility_Tests.o: Tests/Utility_Tests.cpp.o
+.PHONY : Tests/Utility_Tests.o
+
+# target to build an object file
+Tests/Utility_Tests.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Utility_Tests.cpp.o
+.PHONY : Tests/Utility_Tests.cpp.o
+
+Tests/Utility_Tests.i: Tests/Utility_Tests.cpp.i
+.PHONY : Tests/Utility_Tests.i
+
+# target to preprocess a source file
+Tests/Utility_Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Utility_Tests.cpp.i
+.PHONY : Tests/Utility_Tests.cpp.i
+
+Tests/Utility_Tests.s: Tests/Utility_Tests.cpp.s
+.PHONY : Tests/Utility_Tests.s
+
+# target to generate assembly for a file
+Tests/Utility_Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/Tests/Utility_Tests.cpp.s
+.PHONY : Tests/Utility_Tests.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -257,7 +460,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... Monopoly_CPP"
+	@echo "... Monopoly_Tests"
 	@echo "... Player/Player.o"
 	@echo "... Player/Player.i"
 	@echo "... Player/Player.s"
@@ -270,6 +475,27 @@ help:
 	@echo "... SpecialSquare/CommunityChestCard.o"
 	@echo "... SpecialSquare/CommunityChestCard.i"
 	@echo "... SpecialSquare/CommunityChestCard.s"
+	@echo "... Tests/Board_Tests.o"
+	@echo "... Tests/Board_Tests.i"
+	@echo "... Tests/Board_Tests.s"
+	@echo "... Tests/Dice_Tests.o"
+	@echo "... Tests/Dice_Tests.i"
+	@echo "... Tests/Dice_Tests.s"
+	@echo "... Tests/Player_Tests.o"
+	@echo "... Tests/Player_Tests.i"
+	@echo "... Tests/Player_Tests.s"
+	@echo "... Tests/RailRoad_Tests.o"
+	@echo "... Tests/RailRoad_Tests.i"
+	@echo "... Tests/RailRoad_Tests.s"
+	@echo "... Tests/Street_Tests.o"
+	@echo "... Tests/Street_Tests.i"
+	@echo "... Tests/Street_Tests.s"
+	@echo "... Tests/Token_Tests.o"
+	@echo "... Tests/Token_Tests.i"
+	@echo "... Tests/Token_Tests.s"
+	@echo "... Tests/Utility_Tests.o"
+	@echo "... Tests/Utility_Tests.i"
+	@echo "... Tests/Utility_Tests.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

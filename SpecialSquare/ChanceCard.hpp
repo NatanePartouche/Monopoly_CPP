@@ -4,10 +4,7 @@
 #include <vector>
 #include <functional>
 #include "../Player/Player.hpp"
-#include "../Properties/Street.hpp"
-#include <iostream>
-#include <cstdlib> // for rand()
-#include <ctime>   // for srand()
+
 
 // Forward declaration of the Board class
 class Board;

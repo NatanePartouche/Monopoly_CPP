@@ -566,3 +566,167 @@ events:
       Running the CXX compiler's linker: "/usr/bin/ld" "-v"
       GNU ld (GNU Binutils for Ubuntu) 2.38
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckLibraryExists.cmake:69 (try_compile)"
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindX11.cmake:693 (check_library_exists)"
+      - "CMakeLists.txt:33 (find_package)"
+    checks:
+      - "Looking for XOpenDisplay in /usr/lib/aarch64-linux-gnu/libX11.so"
+    directories:
+      source: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-EQq4an"
+      binary: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-EQq4an"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "X11_LIB_X11_SOLO"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-EQq4an'
+        
+        Run Build Command(s): /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E env VERBOSE=1 /bin/make -f Makefile cmTC_2e803/fast
+        /bin/make  -f CMakeFiles/cmTC_2e803.dir/build.make CMakeFiles/cmTC_2e803.dir/build
+        make[1]: Entering directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-EQq4an'
+        Building C object CMakeFiles/cmTC_2e803.dir/CheckFunctionExists.c.o
+        /bin/gcc   -DCHECK_FUNCTION_EXISTS=XOpenDisplay -fdiagnostics-color=always -o CMakeFiles/cmTC_2e803.dir/CheckFunctionExists.c.o -c /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-EQq4an/CheckFunctionExists.c
+        Linking C executable cmTC_2e803
+        /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e803.dir/link.txt --verbose=1
+        /bin/gcc  -DCHECK_FUNCTION_EXISTS=XOpenDisplay CMakeFiles/cmTC_2e803.dir/CheckFunctionExists.c.o -o cmTC_2e803  /usr/lib/aarch64-linux-gnu/libX11.so
+        make[1]: Leaving directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-EQq4an'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindX11.cmake:708 (check_function_exists)"
+      - "CMakeLists.txt:33 (find_package)"
+    checks:
+      - "Looking for gethostbyname"
+    directories:
+      source: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Z2uYAm"
+      binary: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Z2uYAm"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_GETHOSTBYNAME"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Z2uYAm'
+        
+        Run Build Command(s): /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E env VERBOSE=1 /bin/make -f Makefile cmTC_91098/fast
+        /bin/make  -f CMakeFiles/cmTC_91098.dir/build.make CMakeFiles/cmTC_91098.dir/build
+        make[1]: Entering directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Z2uYAm'
+        Building C object CMakeFiles/cmTC_91098.dir/CheckFunctionExists.c.o
+        /bin/gcc   -DCHECK_FUNCTION_EXISTS=gethostbyname -fdiagnostics-color=always -o CMakeFiles/cmTC_91098.dir/CheckFunctionExists.c.o -c /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Z2uYAm/CheckFunctionExists.c
+        Linking C executable cmTC_91098
+        /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91098.dir/link.txt --verbose=1
+        /bin/gcc  -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_91098.dir/CheckFunctionExists.c.o -o cmTC_91098
+        make[1]: Leaving directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Z2uYAm'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindX11.cmake:722 (check_function_exists)"
+      - "CMakeLists.txt:33 (find_package)"
+    checks:
+      - "Looking for connect"
+    directories:
+      source: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-TxKnRu"
+      binary: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-TxKnRu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_CONNECT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-TxKnRu'
+        
+        Run Build Command(s): /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E env VERBOSE=1 /bin/make -f Makefile cmTC_8829b/fast
+        /bin/make  -f CMakeFiles/cmTC_8829b.dir/build.make CMakeFiles/cmTC_8829b.dir/build
+        make[1]: Entering directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-TxKnRu'
+        Building C object CMakeFiles/cmTC_8829b.dir/CheckFunctionExists.c.o
+        /bin/gcc   -DCHECK_FUNCTION_EXISTS=connect -fdiagnostics-color=always -o CMakeFiles/cmTC_8829b.dir/CheckFunctionExists.c.o -c /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-TxKnRu/CheckFunctionExists.c
+        Linking C executable cmTC_8829b
+        /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8829b.dir/link.txt --verbose=1
+        /bin/gcc  -DCHECK_FUNCTION_EXISTS=connect CMakeFiles/cmTC_8829b.dir/CheckFunctionExists.c.o -o cmTC_8829b
+        make[1]: Leaving directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-TxKnRu'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindX11.cmake:731 (check_function_exists)"
+      - "CMakeLists.txt:33 (find_package)"
+    checks:
+      - "Looking for remove"
+    directories:
+      source: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ERrczO"
+      binary: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ERrczO"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_REMOVE"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ERrczO'
+        
+        Run Build Command(s): /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E env VERBOSE=1 /bin/make -f Makefile cmTC_c1612/fast
+        /bin/make  -f CMakeFiles/cmTC_c1612.dir/build.make CMakeFiles/cmTC_c1612.dir/build
+        make[1]: Entering directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ERrczO'
+        Building C object CMakeFiles/cmTC_c1612.dir/CheckFunctionExists.c.o
+        /bin/gcc   -DCHECK_FUNCTION_EXISTS=remove -fdiagnostics-color=always -o CMakeFiles/cmTC_c1612.dir/CheckFunctionExists.c.o -c /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ERrczO/CheckFunctionExists.c
+        Linking C executable cmTC_c1612
+        /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c1612.dir/link.txt --verbose=1
+        /bin/gcc  -DCHECK_FUNCTION_EXISTS=remove CMakeFiles/cmTC_c1612.dir/CheckFunctionExists.c.o -o cmTC_c1612
+        make[1]: Leaving directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-ERrczO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindX11.cmake:740 (check_function_exists)"
+      - "CMakeLists.txt:33 (find_package)"
+    checks:
+      - "Looking for shmat"
+    directories:
+      source: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Y59BQH"
+      binary: "/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Y59BQH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_HAVE_SHMAT"
+      cached: true
+      stdout: |
+        Change Dir: '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Y59BQH'
+        
+        Run Build Command(s): /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E env VERBOSE=1 /bin/make -f Makefile cmTC_7901a/fast
+        /bin/make  -f CMakeFiles/cmTC_7901a.dir/build.make CMakeFiles/cmTC_7901a.dir/build
+        make[1]: Entering directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Y59BQH'
+        Building C object CMakeFiles/cmTC_7901a.dir/CheckFunctionExists.c.o
+        /bin/gcc   -DCHECK_FUNCTION_EXISTS=shmat -fdiagnostics-color=always -o CMakeFiles/cmTC_7901a.dir/CheckFunctionExists.c.o -c /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Y59BQH/CheckFunctionExists.c
+        Linking C executable cmTC_7901a
+        /opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7901a.dir/link.txt --verbose=1
+        /bin/gcc  -DCHECK_FUNCTION_EXISTS=shmat CMakeFiles/cmTC_7901a.dir/CheckFunctionExists.c.o -o cmTC_7901a
+        make[1]: Leaving directory '/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-Y59BQH'
+        
+      exitCode: 0
+...

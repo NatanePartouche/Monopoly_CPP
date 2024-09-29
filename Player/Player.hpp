@@ -40,7 +40,7 @@ public:
 
     // Getters: Provide access to private member variables
     std::string getName() const;                 // Get player's name
-    std::string getToken() const;                // Get player's token
+    Token getToken() const;                // Get player's token
     int getBalance() const;                      // Get player's current balance
     int getPosition() const;                     // Get player's position on the board
     bool isInJail() const;                       // Check if player is in jail
@@ -73,9 +73,6 @@ public:
 
     // Récupère toutes les propriétés du joueur appartenant à un groupe de couleurs spécifique
     std::vector<Street*> getPropertiesOfColorGroup(Color color) const;
-
-    // Display the player's current status (name, balance, properties, etc.)
-    void display() const;
 
     // Static function to retrieve available tokens as a string
     static std::string getAvailableTokensAsString(const std::vector<Player>& players);

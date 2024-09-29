@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/Monopoly_CPP.dir/all
+all: CMakeFiles/Monopoly_Tests.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/Monopoly_CPP.dir/clean
+clean: CMakeFiles/Monopoly_Tests.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -99,6 +101,32 @@ Monopoly_CPP: CMakeFiles/Monopoly_CPP.dir/rule
 CMakeFiles/Monopoly_CPP.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_CPP.dir/build.make CMakeFiles/Monopoly_CPP.dir/clean
 .PHONY : CMakeFiles/Monopoly_CPP.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Monopoly_Tests.dir
+
+# All Build rule for target.
+CMakeFiles/Monopoly_Tests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles --progress-num=7,8,9,10,11,12,13,14,15,16,17,18 "Built target Monopoly_Tests"
+.PHONY : CMakeFiles/Monopoly_Tests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Monopoly_Tests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Monopoly_Tests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Monopoly_Tests.dir/rule
+
+# Convenience name for target.
+Monopoly_Tests: CMakeFiles/Monopoly_Tests.dir/rule
+.PHONY : Monopoly_Tests
+
+# clean rule for target.
+CMakeFiles/Monopoly_Tests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Monopoly_Tests.dir/build.make CMakeFiles/Monopoly_Tests.dir/clean
+.PHONY : CMakeFiles/Monopoly_Tests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

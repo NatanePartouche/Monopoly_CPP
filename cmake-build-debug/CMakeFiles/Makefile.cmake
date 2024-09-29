@@ -19,16 +19,26 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckFunctionExists.cmake"
+  "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/CheckLibraryExists.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Compiler/GNU-C.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Compiler/GNU-CXX.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Compiler/GNU.cmake"
+  "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+  "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+  "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/FindX11.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Platform/Linux-GNU-C.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Platform/Linux-GNU-CXX.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Platform/Linux-GNU.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Platform/Linux.cmake"
   "/opt/CLion/CLion-2024.2.0.1-aarch64/clion-2024.2.0.1/bin/cmake/linux/aarch64/share/cmake-3.29/Modules/Platform/UnixPaths.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/SFML/SFMLConfig.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/SFML/SFMLConfigDependencies.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/SFML/SFMLConfigVersion.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/SFML/SFMLSharedTargets-none.cmake"
+  "/usr/lib/aarch64-linux-gnu/cmake/SFML/SFMLSharedTargets.cmake"
   )
 
 # The corresponding makefile is:
@@ -45,4 +55,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Monopoly_CPP.dir/DependInfo.cmake"
+  "CMakeFiles/Monopoly_Tests.dir/DependInfo.cmake"
   )

@@ -1,5 +1,9 @@
 #include "CommunityChestCard.hpp"
 #include "../Board.hpp"
+#include "../Properties/Street.hpp"
+#include <iostream>
+#include <cstdlib> // for rand()
+#include <ctime>   // for srand()
 
 // Temporary "dummy" objects to initialize references
 Player dummyPlayer1;

@@ -180,23 +180,22 @@ CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.o: \
  /usr/include/c++/11/limits /usr/include/c++/11/algorithm \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Street.hpp \
- /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/../Player/Player.hpp \
- /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Color.hpp \
- /usr/include/c++/11/ctime \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Board.hpp \
  /usr/include/c++/11/variant /usr/include/c++/11/bits/parse_numbers.h \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Street.hpp \
+ /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/../Player/Player.hpp \
+ /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Color.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/RailRoad.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Utility.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/../Dice.hpp \
+ /usr/include/c++/11/ctime \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/CommunityChestCard.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/ChanceCard.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/../Player/Player.hpp \
- /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/../Properties/Street.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/Go.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/GoToJail.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/LuxuryTax.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/Jail.hpp \
  /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/IncomeTax.hpp \
- /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/FreeParking.hpp
+ /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../SpecialSquare/FreeParking.hpp \
+ /home/ubuntu/CLionProjects/Monopoly_CPP/SpecialSquare/../Properties/Street.hpp

@@ -156,6 +156,10 @@ Monopoly_CPP: CMakeFiles/Monopoly_CPP.dir/Player/Token.cpp.o
 Monopoly_CPP: CMakeFiles/Monopoly_CPP.dir/SpecialSquare/CommunityChestCard.cpp.o
 Monopoly_CPP: CMakeFiles/Monopoly_CPP.dir/SpecialSquare/ChanceCard.cpp.o
 Monopoly_CPP: CMakeFiles/Monopoly_CPP.dir/build.make
+Monopoly_CPP: /usr/lib/aarch64-linux-gnu/libsfml-graphics.so.2.5.1
+Monopoly_CPP: /usr/lib/aarch64-linux-gnu/libsfml-window.so.2.5.1
+Monopoly_CPP: /usr/lib/aarch64-linux-gnu/libsfml-system.so.2.5.1
+Monopoly_CPP: /usr/lib/aarch64-linux-gnu/libX11.so
 Monopoly_CPP: CMakeFiles/Monopoly_CPP.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ubuntu/CLionProjects/Monopoly_CPP/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Monopoly_CPP"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Monopoly_CPP.dir/link.txt --verbose=$(VERBOSE)
