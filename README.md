@@ -35,54 +35,158 @@ The game is built using C++ and includes a graphical interface to display the bo
 - **Jail**: Players can go to jail if they land on the "Go to Jail" square or roll a double three times in a row. They can get out by paying a fine, using a "Get out of jail free" card, or rolling a double.
 
 
-### Streets in the Game
+## Streets in the Game
 
-This Monopoly version includes several streets divided into color groups, each with its own price, rent, and building costs. Below is a list of streets included in the game:
+This Monopoly version includes several streets divided into color groups, each with its own price, rent, and building costs. 
+Below is a list of streets included in the game:
 
-	1.	Mediterranean Avenue (Brown)
-Price: 60 | Rent: 5 | House Price: 50 | Rent with Houses: 10, 20, 40, 80, 160 | Rent with Hotel: 320
-2.	Baltic Avenue (Brown)
-Price: 60 | Rent: 5 | House Price: 50 | Rent with Houses: 10, 20, 40, 80, 160 | Rent with Hotel: 320
-3.	Oriental Avenue (Light Blue)
-Price: 100 | Rent: 6 | House Price: 50 | Rent with Houses: 12, 30, 90, 270, 400 | Rent with Hotel: 550
-4.	Vermont Avenue (Light Blue)
-Price: 100 | Rent: 6 | House Price: 50 | Rent with Houses: 12, 30, 90, 270, 400 | Rent with Hotel: 550
-5.	Connecticut Avenue (Light Blue)
-Price: 120 | Rent: 8 | House Price: 50 | Rent with Houses: 16, 40, 100, 300, 450 | Rent with Hotel: 600
-6.	St. Charles Place (Pink)
-Price: 140 | Rent: 10 | House Price: 100 | Rent with Houses: 20, 50, 150, 450, 625 | Rent with Hotel: 750
-7.	States Avenue (Pink)
-Price: 140 | Rent: 10 | House Price: 100 | Rent with Houses: 20, 50, 150, 450, 625 | Rent with Hotel: 750
-8.	Virginia Avenue (Pink)
-Price: 160 | Rent: 12 | House Price: 100 | Rent with Houses: 24, 60, 180, 500, 700 | Rent with Hotel: 900
-9.	St. James Place (Orange)
-Price: 180 | Rent: 14 | House Price: 100 | Rent with Houses: 28, 70, 200, 550, 750 | Rent with Hotel: 950
-10.	Tennessee Avenue (Orange)
-Price: 180 | Rent: 14 | House Price: 100 | Rent with Houses: 28, 70, 200, 550, 750 | Rent with Hotel: 950
-11.	New York Avenue (Orange)
-Price: 200 | Rent: 16 | House Price: 100 | Rent with Houses: 32, 80, 220, 600, 800 | Rent with Hotel: 1000
-12.	Kentucky Avenue (Red)
-Price: 220 | Rent: 18 | House Price: 150 | Rent with Houses: 36, 90, 250, 700, 875 | Rent with Hotel: 1050
-13.	Indiana Avenue (Red)
-Price: 220 | Rent: 18 | House Price: 150 | Rent with Houses: 36, 90, 250, 700, 875 | Rent with Hotel: 1050
-14.	Illinois Avenue (Red)
-Price: 240 | Rent: 20 | House Price: 150 | Rent with Houses: 40, 100, 300, 750, 925 | Rent with Hotel: 1100
-15.	Atlantic Avenue (Yellow)
-Price: 260 | Rent: 22 | House Price: 150 | Rent with Houses: 44, 110, 330, 800, 975 | Rent with Hotel: 1150
-16.	Ventnor Avenue (Yellow)
-Price: 260 | Rent: 22 | House Price: 150 | Rent with Houses: 44, 110, 330, 800, 975 | Rent with Hotel: 1150
-17.	Marvin Gardens (Yellow)
-Price: 280 | Rent: 24 | House Price: 150 | Rent with Houses: 48, 120, 360, 850, 1025 | Rent with Hotel: 1200
-18.	Pacific Avenue (Green)
-Price: 300 | Rent: 26 | House Price: 200 | Rent with Houses: 52, 130, 390, 900, 1100 | Rent with Hotel: 1275
-19.	North Carolina Avenue (Green)
-Price: 300 | Rent: 26 | House Price: 200 | Rent with Houses: 52, 130, 390, 900, 1100 | Rent with Hotel: 1275
-20.	Pennsylvania Avenue (Green)
-Price: 320 | Rent: 28 | House Price: 200 | Rent with Houses: 56, 150, 450, 1000, 1200 | Rent with Hotel: 1400
-21.	Park Place (Dark Blue)
-Price: 350 | Rent: 35 | House Price: 200 | Rent with Houses: 70, 175, 500, 1100, 1300 | Rent with Hotel: 1500
-22.	Boardwalk (Dark Blue)
-Price: 400 | Rent: 50 | House Price: 200 | Rent with Houses: 100, 200, 600, 1400, 1700 | Rent with Hotel: 2000
+### Brown Group
+1. **Mediterranean Avenue**
+   - Price: 60
+   - Rent: 5
+   - House Price: 50
+   - Rent with Houses: 10, 20, 40, 80, 160
+   - Rent with Hotel: 320
+2. **Baltic Avenue**
+   - Price: 60
+   - Rent: 5
+   - House Price: 50
+   - Rent with Houses: 10, 20, 40, 80, 160
+   - Rent with Hotel: 320
+
+### Light Blue Group
+3. **Oriental Avenue**
+   - Price: 100
+   - Rent: 6
+   - House Price: 50
+   - Rent with Houses: 12, 30, 90, 270, 400
+   - Rent with Hotel: 550
+4. **Vermont Avenue**
+   - Price: 100
+   - Rent: 6
+   - House Price: 50
+   - Rent with Houses: 12, 30, 90, 270, 400
+   - Rent with Hotel: 550
+5. **Connecticut Avenue**
+   - Price: 120
+   - Rent: 8
+   - House Price: 50
+   - Rent with Houses: 16, 40, 100, 300, 450
+   - Rent with Hotel: 600
+
+### Pink Group
+6. **St. Charles Place**
+   - Price: 140
+   - Rent: 10
+   - House Price: 100
+   - Rent with Houses: 20, 50, 150, 450, 625
+   - Rent with Hotel: 750
+7. **States Avenue**
+   - Price: 140
+   - Rent: 10
+   - House Price: 100
+   - Rent with Houses: 20, 50, 150, 450, 625
+   - Rent with Hotel: 750
+8. **Virginia Avenue**
+   - Price: 160
+   - Rent: 12
+   - House Price: 100
+   - Rent with Houses: 24, 60, 180, 500, 700
+   - Rent with Hotel: 900
+
+### Orange Group
+9. **St. James Place**
+   - Price: 180
+   - Rent: 14
+   - House Price: 100
+   - Rent with Houses: 28, 70, 200, 550, 750
+   - Rent with Hotel: 950
+10. **Tennessee Avenue**
+    - Price: 180
+    - Rent: 14
+    - House Price: 100
+    - Rent with Houses: 28, 70, 200, 550, 750
+    - Rent with Hotel: 950
+11. **New York Avenue**
+    - Price: 200
+    - Rent: 16
+    - House Price: 100
+    - Rent with Houses: 32, 80, 220, 600, 800
+    - Rent with Hotel: 1000
+
+### Red Group
+12. **Kentucky Avenue**
+    - Price: 220
+    - Rent: 18
+    - House Price: 150
+    - Rent with Houses: 36, 90, 250, 700, 875
+    - Rent with Hotel: 1050
+13. **Indiana Avenue**
+    - Price: 220
+    - Rent: 18
+    - House Price: 150
+    - Rent with Houses: 36, 90, 250, 700, 875
+    - Rent with Hotel: 1050
+14. **Illinois Avenue**
+    - Price: 240
+    - Rent: 20
+    - House Price: 150
+    - Rent with Houses: 40, 100, 300, 750, 925
+    - Rent with Hotel: 1100
+
+### Yellow Group
+15. **Atlantic Avenue**
+    - Price: 260
+    - Rent: 22
+    - House Price: 150
+    - Rent with Houses: 44, 110, 330, 800, 975
+    - Rent with Hotel: 1150
+16. **Ventnor Avenue**
+    - Price: 260
+    - Rent: 22
+    - House Price: 150
+    - Rent with Houses: 44, 110, 330, 800, 975
+    - Rent with Hotel: 1150
+17. **Marvin Gardens**
+    - Price: 280
+    - Rent: 24
+    - House Price: 150
+    - Rent with Houses: 48, 120, 360, 850, 1025
+    - Rent with Hotel: 1200
+
+### Green Group
+18. **Pacific Avenue**
+    - Price: 300
+    - Rent: 26
+    - House Price: 200
+    - Rent with Houses: 52, 130, 390, 900, 1100
+    - Rent with Hotel: 1275
+19. **North Carolina Avenue**
+    - Price: 300
+    - Rent: 26
+    - House Price: 200
+    - Rent with Houses: 52, 130, 390, 900, 1100
+    - Rent with Hotel: 1275
+20. **Pennsylvania Avenue**
+    - Price: 320
+    - Rent: 28
+    - House Price: 200
+    - Rent with Houses: 56, 150, 450, 1000, 1200
+    - Rent with Hotel: 1400
+
+### Dark Blue Group
+21. **Park Place**
+    - Price: 350
+    - Rent: 35
+    - House Price: 200
+    - Rent with Houses: 70, 175, 500, 1100, 1300
+    - Rent with Hotel: 1500
+22. **Boardwalk**
+    - Price: 400
+    - Rent: 50
+    - House Price: 200
+    - Rent with Houses: 100, 200, 600, 1400, 1700
+    - Rent with Hotel: 2000
 
 ### Additional Slots
 
