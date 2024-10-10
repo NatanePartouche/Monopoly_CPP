@@ -1,4 +1,2 @@
 *.cpp linguist-language=C++
 *.hpp linguist-language=C++
-*.h linguist-language=C++
-Makefile linguist-language=Makefile
