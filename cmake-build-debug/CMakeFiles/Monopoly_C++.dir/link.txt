@@ -1,1 +1,0 @@
-/bin/g++ -g CMakeFiles/Monopoly_C++.dir/main.cpp.o CMakeFiles/Monopoly_C++.dir/Player/Player.cpp.o CMakeFiles/Monopoly_C++.dir/Player/Token.cpp.o -o Monopoly_C++
